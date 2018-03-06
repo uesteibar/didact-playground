@@ -23,7 +23,11 @@ const render = (element, parentDom) => {
   const childElements = props.children || []
   childElements.forEach(childElement => render(childElement, dom))
 
-  parentDom.appendChild(dom)
+  if (!parentDom.lastChild) {
+    parentDom.appendChild(dom);     
+  } else {
+    parentDom.replaceChild(dom, parentDom.lastChild);    
+  }
 }
 
 export default render
