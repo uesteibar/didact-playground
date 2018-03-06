@@ -9,7 +9,4 @@ function tick() {
 }
 
 tick();
-
 setInterval(tick, 1000);
-
-Didact.render(element, document.getElementById('root'))
